@@ -187,7 +187,7 @@ namespace ZPL_to_PDF_converter
                     {
                         cbPDF = false;
                     }
-
+                    
                     XLabel = Convert.ToDouble(TbX.Text.Replace(".", ","));
                     XLabel = Math.Round(XLabel / 2.54, 2);
                     Ylabel = Convert.ToDouble(TbY.Text.Replace(".", ","));
