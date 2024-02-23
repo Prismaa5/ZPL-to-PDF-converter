@@ -36,8 +36,9 @@
             this.pdfViewer1 = new PdfiumViewer.PdfViewer();
             this.LbProcessando = new System.Windows.Forms.Label();
             this.TbZPL = new System.Windows.Forms.TextBox();
-            this.CbPagina = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.CbPDF = new System.Windows.Forms.CheckBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.TbCopias = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.CbDensidade = new System.Windows.Forms.ComboBox();
@@ -47,9 +48,6 @@
             this.TbY = new System.Windows.Forms.TextBox();
             this.TbX = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.LbPagina = new System.Windows.Forms.Label();
-            this.CbPDF = new System.Windows.Forms.CheckBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.BtVisualizar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -139,24 +137,6 @@
             this.TbZPL.Size = new System.Drawing.Size(453, 381);
             this.TbZPL.TabIndex = 10;
             // 
-            // CbPagina
-            // 
-            this.CbPagina.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CbPagina.FormattingEnabled = true;
-            this.CbPagina.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.CbPagina.Items.AddRange(new object[] {
-            "Letter",
-            "Legal",
-            "A4",
-            "A5",
-            "A6"});
-            this.CbPagina.Location = new System.Drawing.Point(264, 26);
-            this.CbPagina.Margin = new System.Windows.Forms.Padding(4);
-            this.CbPagina.Name = "CbPagina";
-            this.CbPagina.Size = new System.Drawing.Size(97, 24);
-            this.CbPagina.TabIndex = 11;
-            this.CbPagina.Text = "A4";
-            // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Silver;
@@ -171,8 +151,6 @@
             this.groupBox1.Controls.Add(this.TbY);
             this.groupBox1.Controls.Add(this.TbX);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.LbPagina);
-            this.groupBox1.Controls.Add(this.CbPagina);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.groupBox1.Location = new System.Drawing.Point(31, 490);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
@@ -182,9 +160,31 @@
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             // 
+            // CbPDF
+            // 
+            this.CbPDF.AutoSize = true;
+            this.CbPDF.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CbPDF.Location = new System.Drawing.Point(264, 154);
+            this.CbPDF.Name = "CbPDF";
+            this.CbPDF.Size = new System.Drawing.Size(146, 22);
+            this.CbPDF.TabIndex = 13;
+            this.CbPDF.Text = "Agrupar Etiquetas";
+            this.CbPDF.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(11, 152);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(211, 22);
+            this.label5.TabIndex = 22;
+            this.label5.Text = "Gerar pdf Multi Label:";
+            // 
             // TbCopias
             // 
-            this.TbCopias.Location = new System.Drawing.Point(264, 150);
+            this.TbCopias.Location = new System.Drawing.Point(264, 112);
             this.TbCopias.Margin = new System.Windows.Forms.Padding(4);
             this.TbCopias.Name = "TbCopias";
             this.TbCopias.Size = new System.Drawing.Size(97, 22);
@@ -196,7 +196,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(8, 150);
+            this.label4.Location = new System.Drawing.Point(8, 112);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(198, 22);
@@ -213,7 +213,7 @@
             "8dpmm",
             "12dpmm",
             "24dpmm"});
-            this.CbDensidade.Location = new System.Drawing.Point(264, 108);
+            this.CbDensidade.Location = new System.Drawing.Point(264, 70);
             this.CbDensidade.Margin = new System.Windows.Forms.Padding(4);
             this.CbDensidade.Name = "CbDensidade";
             this.CbDensidade.Size = new System.Drawing.Size(97, 24);
@@ -224,7 +224,7 @@
             // 
             this.LbDensidade.AutoSize = true;
             this.LbDensidade.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LbDensidade.Location = new System.Drawing.Point(8, 113);
+            this.LbDensidade.Location = new System.Drawing.Point(8, 75);
             this.LbDensidade.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LbDensidade.Name = "LbDensidade";
             this.LbDensidade.Size = new System.Drawing.Size(247, 22);
@@ -235,7 +235,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(413, 69);
+            this.label3.Location = new System.Drawing.Point(413, 31);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(32, 19);
@@ -246,7 +246,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(324, 68);
+            this.label2.Location = new System.Drawing.Point(324, 30);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(20, 19);
@@ -255,7 +255,7 @@
             // 
             // TbY
             // 
-            this.TbY.Location = new System.Drawing.Point(351, 66);
+            this.TbY.Location = new System.Drawing.Point(351, 28);
             this.TbY.Margin = new System.Windows.Forms.Padding(4);
             this.TbY.Name = "TbY";
             this.TbY.Size = new System.Drawing.Size(60, 22);
@@ -265,7 +265,7 @@
             // 
             // TbX
             // 
-            this.TbX.Location = new System.Drawing.Point(264, 66);
+            this.TbX.Location = new System.Drawing.Point(264, 28);
             this.TbX.Margin = new System.Windows.Forms.Padding(4);
             this.TbX.Name = "TbX";
             this.TbX.Size = new System.Drawing.Size(51, 22);
@@ -277,45 +277,12 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(8, 71);
+            this.label1.Location = new System.Drawing.Point(8, 33);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(188, 22);
             this.label1.TabIndex = 13;
             this.label1.Text = "Tamanho da Label:";
-            // 
-            // LbPagina
-            // 
-            this.LbPagina.AutoSize = true;
-            this.LbPagina.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LbPagina.Location = new System.Drawing.Point(8, 31);
-            this.LbPagina.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.LbPagina.Name = "LbPagina";
-            this.LbPagina.Size = new System.Drawing.Size(201, 22);
-            this.LbPagina.TabIndex = 12;
-            this.LbPagina.Text = "Tamanho da Pagina:";
-            // 
-            // CbPDF
-            // 
-            this.CbPDF.AutoSize = true;
-            this.CbPDF.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CbPDF.Location = new System.Drawing.Point(264, 192);
-            this.CbPDF.Name = "CbPDF";
-            this.CbPDF.Size = new System.Drawing.Size(146, 22);
-            this.CbPDF.TabIndex = 13;
-            this.CbPDF.Text = "Agrupar Etiquetas";
-            this.CbPDF.UseVisualStyleBackColor = true;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(11, 190);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(264, 28);
-            this.label5.TabIndex = 22;
-            this.label5.Text = "Gerar pdf Multi Label:";
             // 
             // BtVisualizar
             // 
@@ -329,8 +296,10 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoSize = true;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(1119, 763);
             this.Controls.Add(this.BtVisualizar);
@@ -363,8 +332,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NomeDoArquivo;
         private System.Windows.Forms.TextBox TbZPL;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label LbPagina;
-        private System.Windows.Forms.ComboBox CbPagina;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox TbY;
         private System.Windows.Forms.TextBox TbX;

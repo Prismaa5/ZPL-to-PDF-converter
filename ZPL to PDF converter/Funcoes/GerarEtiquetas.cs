@@ -23,7 +23,7 @@ namespace ZPL_to_PDF_converter.Funcoes
             using (HttpClient client = new HttpClient())
             {
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/pdf"));
-                client.DefaultRequestHeaders.Add("X-Page-Size", $"{form1.TamanhoPagina}");
+                //client.DefaultRequestHeaders.Add("X-Page-Size", $"{form1.TamanhoPagina}");
                 client.DefaultRequestHeaders.Add("X-Page-Align", "Center");
                 client.DefaultRequestHeaders.Add("X-Page-Vertical-Align", "Center");
 
@@ -37,8 +37,8 @@ namespace ZPL_to_PDF_converter.Funcoes
                 {
                     string outputFilePath = $"{form1.Diretorio}\\Etiquetas\\Etiqueta_{contador}.pdf";
                     contador++;
-                    string api = $"http://api.labelary.com/v1/printers/{form1.Densidade}/labels/{form1.XLabel}x{form1.Ylabel}//";
-                    string apiUrl = api.Replace(",", ".") + block + " -O label.pdf";
+                    string api = $"http://api.labelary.com/v1/printers/{form1.Densidade}/labels/{form1.XLabel}x{form1.Ylabel}/";
+                    string apiUrl = api.Replace(",", ".") + block;
                     try
                     {
                         HttpResponseMessage response = await client.GetAsync(apiUrl);
@@ -79,7 +79,7 @@ namespace ZPL_to_PDF_converter.Funcoes
             using (HttpClient client = new HttpClient())
             {
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/pdf"));
-                client.DefaultRequestHeaders.Add("X-Page-Size", $"{form1.TamanhoPagina}");
+                //client.DefaultRequestHeaders.Add("X-Page-Size", $"{form1.TamanhoPagina}");
                 client.DefaultRequestHeaders.Add("X-Page-Align", "Center");
                 client.DefaultRequestHeaders.Add("X-Page-Vertical-Align", "Center");
 
@@ -168,7 +168,7 @@ namespace ZPL_to_PDF_converter.Funcoes
 
                 if (agruparBlocos)
                 {
-                    var e = 19 / Convert.ToInt32(form1.Copias);
+                    var e = 16 / Convert.ToInt32(form1.Copias);
 
                     blocosIndividuais.Add("^XA" + blocks[i] + "^XZ");
 

@@ -73,7 +73,6 @@ namespace ZPL_to_PDF_converter
                 string nomeDoArquivo = dataGridView1.Rows[e.RowIndex].Cells["NomeDoArquivo"].Value.ToString();
                 string caminhoDoPDF = Path.Combine(Diretorio, "Etiquetas", nomeDoArquivo);
 
-                // Abra e exiba o PDF selecionado (você pode usar a biblioteca que preferir para visualização de PDF)
                 AbrirPDF(caminhoDoPDF);
             }
         }
@@ -115,7 +114,7 @@ namespace ZPL_to_PDF_converter
                         }
                     }
 
-                    TamanhoPagina = CbPagina.Text;
+                    //TamanhoPagina = CbPagina.Text;
                     Densidade = CbDensidade.Text;
                     LbProcessando.Visible = true;
                     Copias = TbCopias.Text;
@@ -145,7 +144,7 @@ namespace ZPL_to_PDF_converter
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message );
+                MessageBox.Show(ex.Message);
             }
         }
         
@@ -175,7 +174,7 @@ namespace ZPL_to_PDF_converter
                 }
                 else
                 {
-                    TamanhoPagina = CbPagina.Text;
+                    //TamanhoPagina = CbPagina.Text;
                     Densidade = CbDensidade.Text;
                     LbProcessando.Visible = true;
                     Copias = TbCopias.Text;
